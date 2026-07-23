@@ -1,0 +1,17 @@
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.eggs/
+
+# Local runner cache / outputs
+.tako-cache/
+result.tako.zip
+
+# Env / editor
+.venv/
+venv/
+.env
+.DS_Store

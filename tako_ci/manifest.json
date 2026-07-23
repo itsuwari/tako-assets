@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "tako-calculation-wasm-manifest-v1",
+  "version": "29f9a4c0ea675a30",
+  "note": "Minimal Tako CI asset bundle: smallest WASM cores (mlip, qc) plus the small model checkpoints that fit a git/PyPI distribution. Larger cores/models (tb, nequip-l, equiformer) are fetched over the network by tako_ci.py when needed.",
+  "assets": {
+    "mlip": {
+      "wasm": "mlip_core.687103967e7ef550.wasm",
+      "sha256": "687103967e7ef5503f500c71ccdc7df4d1b82d40373f4535751eecaca1f2a931",
+      "version": "687103967e7ef550",
+      "optimization": {
+        "tool": "wasm-opt",
+        "level": "O4",
+        "exceptionHandling": false,
+        "strip": "wasm-strip"
+      }
+    },
+    "qc": {
+      "wasm": "qc_core.636706acb68ab6ef.wasm",
+      "sha256": "636706acb68ab6ef01bf9fd1b4e3a5c29545865cd81c734d6f549232a16ad537",
+      "version": "636706acb68ab6ef",
+      "optimization": {
+        "tool": "wasm-opt",
+        "level": "O4",
+        "exceptionHandling": false,
+        "strip": "wasm-strip"
+      }
+    }
+  },
+  "models": {
+    "skala-1.1": {
+      "runtime": "qc",
+      "file": "skala-1.1.0c8432ac3f03c8f1.fun",
+      "sha256": "0c8432ac3f03c8f1276372df9aca5b7ee7f8939d47a8789eb158976e89aa0606",
+      "bytes": 2412189
+    },
+    "nequix-mp-1": {
+      "runtime": "nequix",
+      "file": "nequix-mp-1.1647af8e627e1afa.nqx",
+      "sha256": "1647af8e627e1afa11e2bfadeab0797326513a521afd7dd01606a96f56783eee",
+      "bytes": 2842366
+    },
+    "nequix-mp-1-pft": {
+      "runtime": "nequix",
+      "file": "nequix-mp-1-pft.a88aeaed71fd4475.nqx",
+      "sha256": "a88aeaed71fd447572dc57af21d469207d7737b85a6dbb66f8c38156f175c5f1",
+      "bytes": 2842840
+    },
+    "nequip-s": {
+      "runtime": "nequip",
+      "file": "nequip-s.63d4bafd872850a0.nequip.zip",
+      "sha256": "63d4bafd872850a014fd21dedeea416b61173a17750dee0b2b8dd2b126f407aa",
+      "bytes": 5638676
+    }
+  }
+}

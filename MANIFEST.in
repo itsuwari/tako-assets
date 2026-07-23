@@ -1,0 +1,5 @@
+include README.md
+include LICENSE
+include tako_ci/run.mjs
+include tako_ci/manifest.json
+recursive-include tako_ci/assets *
