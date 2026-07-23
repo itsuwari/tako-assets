@@ -1,8 +1,19 @@
 {
   "schemaVersion": "tako-calculation-wasm-manifest-v1",
   "version": "29f9a4c0ea675a30",
-  "note": "Minimal Tako CI asset bundle: smallest WASM cores (mlip, qc) plus the small model checkpoints that fit a git/PyPI distribution. Larger cores/models (tb, nequip-l, equiformer) are fetched over the network by tako_ci.py when needed.",
+  "note": "Tako CI asset bundle: WASM cores (tb, mlip, qc) plus the small model checkpoints that fit a git/PyPI distribution. Larger models (nequip-l, equiformer) are fetched over the network by tako_ci.py when needed.",
   "assets": {
+    "tb": {
+      "wasm": "tb_core.74a851846dd4883b.wasm",
+      "sha256": "74a851846dd4883b8e0b7ae9e7f2803ce392c93c3414c7c3fc25ba5dfce10890",
+      "version": "74a851846dd4883b",
+      "optimization": {
+        "tool": "wasm-opt",
+        "level": "O4",
+        "exceptionHandling": false,
+        "strip": "wasm-strip"
+      }
+    },
     "mlip": {
       "wasm": "mlip_core.687103967e7ef550.wasm",
       "sha256": "687103967e7ef5503f500c71ccdc7df4d1b82d40373f4535751eecaca1f2a931",

@@ -25,5 +25,5 @@ by that model's own upstream license and citation requirements:
   - nequip-s         (NequIP)
 
 Consult the upstream projects for the terms that apply to each checkpoint before
-redistribution or commercial use. The compiled WASM cores (mlip_core, qc_core)
-are build artifacts of the Tako calculation engines.
+redistribution or commercial use. The compiled WASM cores (tb_core, mlip_core,
+qc_core) are build artifacts of the Tako calculation engines.

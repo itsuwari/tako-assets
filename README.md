@@ -32,22 +32,22 @@ manifest by first looking for a bundled copy under `tako_ci/assets/`, verifying
 its SHA-256, and only falling back to a signed network download when the asset is
 not present locally.
 
-To stay within a git- and PyPI-friendly size (~28 MB), only the smallest cores
-and checkpoints are bundled:
+To stay within a git- and PyPI-friendly size (~35 MB), all three WASM cores plus
+the small checkpoints are bundled, while the large model weights are left out:
 
 | Asset | Kind | Size | Runs |
 | --- | --- | --- | --- |
+| `tb_core` | WASM core | 6.4 MB | GFN2 / g-xTB tight-binding (no model file) |
 | `mlip_core` | WASM core | 3.0 MB | NequIP / Nequix models |
-| `qc_core` | WASM core | 13 MB | Skala functional |
+| `qc_core` | WASM core | 13 MB | DFT — GGA / mGGA functionals and the Skala functional |
 | `nequix-mp-1` | model | 2.8 MB | MLIP |
 | `nequix-mp-1-pft` | model | 2.8 MB | MLIP |
 | `nequip-s` | model | 5.6 MB | MLIP |
 | `skala-1.1` | model | 2.4 MB | QC (DFT surrogate) |
 
-Larger assets — the `tb_core` core, the `nequip-l` checkpoint (72 MB), and the
-`equiformer` / `equiformer-gradient` checkpoints (486–560 MB) — are **not**
-bundled. Jobs that need them fetch them over the network in hosts that allow it;
-in fetch-restricted sandboxes those jobs run in the full Tako application
-instead.
+Only the large model weights are left out — the `nequip-l` checkpoint (72 MB)
+and the `equiformer` / `equiformer-gradient` checkpoints (486–560 MB). Jobs that
+need them fetch them over the network in hosts that allow it; in fetch-restricted
+sandboxes those jobs run in the full Tako application instead.
 
 Bundled digests are pinned in `tako_ci/manifest.json`.
